@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51f0b0b4-acb7-46b6-876f-eab843983d21" name="Changes" comment="Created a basic implementation of the use case">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/TestCases.kt" afterDir="false" />
+    <list default="true" id="51f0b0b4-acb7-46b6-876f-eab843983d21" name="Changes" comment="Created a passing test for the happy path">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/TestCases.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/TestCases.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +45,31 @@
     "settings.editor.selected.configurable": "configurable.group.language"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TestCases.When all sources complete successfully, aggregated data is returned">
+  <component name="RunManager" selected="JUnit.TestCases">
+    <configuration name="TestCases" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CoroutinesDemo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestCases.When all sources complete successfully, aggregated data is returned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CoroutinesDemo" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCases" />
       <option name="METHOD_NAME" value="When all sources complete successfully, aggregated data is returned" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCases.When loading a mocked user fails, the error is propagated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CoroutinesDemo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases" />
+      <option name="METHOD_NAME" value="When loading a mocked user fails, the error is propagated" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -68,7 +87,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCases" />
         <item itemvalue="JUnit.TestCases.When all sources complete successfully, aggregated data is returned" />
+        <item itemvalue="JUnit.TestCases.When loading a mocked user fails, the error is propagated" />
         <item itemvalue="JUnit.TestCases.exampleTest" />
       </list>
     </recent_temporary>
@@ -90,11 +111,20 @@
       <option name="project" value="LOCAL" />
       <updated>1689450697553</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created a passing test for the happy path">
+      <option name="closed" value="true" />
+      <created>1689451204097</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689451204097</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created a basic implementation of the use case" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a basic implementation of the use case" />
+    <MESSAGE value="Created a passing test for the happy path" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a passing test for the happy path" />
   </component>
 </project>
