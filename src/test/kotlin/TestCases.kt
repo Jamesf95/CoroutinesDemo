@@ -87,7 +87,6 @@ class TestCases {
             }
         }
 
-
         val expected = AggregatedUserDetails(
             mockUser, listOf(), mockFriends
         )
@@ -112,7 +111,7 @@ class TestCases {
         }
 
         val expected = AggregatedUserDetails(
-            mockUser, listOf(), mockFriends
+            mockUser, mockComments, listOf()
         )
         val actual = result.getOrNull()
 
@@ -131,9 +130,8 @@ class TestCases {
             }
         }
 
-
         val expected = AggregatedUserDetails(
-            mockUser, listOf(), mockFriends
+            mockUser, mockComments, listOf()
         )
         val actual = result.getOrNull()
 

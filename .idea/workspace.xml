@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51f0b0b4-acb7-46b6-876f-eab843983d21" name="Changes" comment="Created a passing test for the happy path">
+    <list default="true" id="51f0b0b4-acb7-46b6-876f-eab843983d21" name="Changes" comment="Added tests for all requirements other than the close functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/LoadAggregatedUserUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/LoadAggregatedUserUseCase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/TestCases.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/TestCases.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,12 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689451204097</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added tests for all requirements other than the close functionality">
+      <option name="closed" value="true" />
+      <created>1689451849646</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689451849646</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created a basic implementation of the use case" />
     <MESSAGE value="Created a passing test for the happy path" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a passing test for the happy path" />
+    <MESSAGE value="Added tests for all requirements other than the close functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests for all requirements other than the close functionality" />
   </component>
 </project>

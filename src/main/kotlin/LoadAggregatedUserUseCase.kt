@@ -8,8 +8,8 @@ class LoadAggregatedUserUseCase(
 
     suspend fun loadAggregatedUserDetails(): AggregatedUserDetails {
         val userDetails = loadUserDetails()
-        val comments = loadComments(userDetails.id)
-        val friends = loadFriends(userDetails.id)
+        val comments =  tryToLoadList(userDetails.id, loadComments)
+        val friends = tryToLoadList(userDetails.id, loadFriends)
 
         return AggregatedUserDetails(
             userDetails = userDetails,
@@ -20,5 +20,19 @@ class LoadAggregatedUserUseCase(
 
     fun close() {
         // TODO
+    }
+
+    private suspend fun <T> tryToLoadList(
+        userId: String,
+        loadFunction: suspend (String) -> List<T> ,
+        defaultValue: List<T> = listOf()
+    ): List<T> {
+        return try {
+           withTimeout(2000L) {
+                loadFunction(userId)
+            }
+        } catch (e: Throwable) {
+            defaultValue
+        }
     }
 }
