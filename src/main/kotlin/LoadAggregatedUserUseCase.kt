@@ -11,8 +11,14 @@ class LoadAggregatedUserUseCase(
     suspend fun loadAggregatedUserDetails(): AggregatedUserDetails {
         val deferredResult = coroutineScope.async {
             val userDetails = loadUserDetails()
-            val comments = tryToLoadList(userDetails.id, loadComments)
-            val friends = tryToLoadList(userDetails.id, loadFriends)
+
+            val commentsAndFriends = awaitAll(
+                async { tryToLoadList(userDetails.id, loadComments) },
+                async { tryToLoadList(userDetails.id, loadFriends) }
+            )
+
+            val comments = commentsAndFriends[0] as List<Comment>
+            val friends = commentsAndFriends[1] as List<UserDetails>
 
             AggregatedUserDetails(
                 userDetails = userDetails,

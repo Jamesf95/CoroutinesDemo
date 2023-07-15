@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51f0b0b4-acb7-46b6-876f-eab843983d21" name="Changes" comment="Added a test case for 'close' working properly">
+    <list default="true" id="51f0b0b4-acb7-46b6-876f-eab843983d21" name="Changes" comment="Implemented a cancellation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/LoadAggregatedUserUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/LoadAggregatedUserUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/TestCases.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/TestCases.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689452658908</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implemented a cancellation">
+      <option name="closed" value="true" />
+      <created>1689453114324</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689453114324</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -164,6 +171,7 @@
     <MESSAGE value="Added tests for all requirements other than the close functionality" />
     <MESSAGE value="Fixed a typo in the test cases preventing it from passing" />
     <MESSAGE value="Added a test case for 'close' working properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a test case for 'close' working properly" />
+    <MESSAGE value="Implemented a cancellation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented a cancellation" />
   </component>
 </project>
