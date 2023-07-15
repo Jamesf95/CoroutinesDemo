@@ -1,4 +1,5 @@
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
@@ -150,7 +151,7 @@ class TestCases {
         val result = runBlocking {
             runCatching {
                 val useCase = LoadAggregatedUserUseCase(
-                    loadUserDetails = { loadMockUser() },
+                    loadUserDetails = { loadMockUser(100) },
                     loadComments = {
                         commentsCalled = true
                         loadMockComments(it)
@@ -161,12 +162,19 @@ class TestCases {
                     }
                 )
 
-                val result = useCase.loadAggregatedUserDetails()
-                useCase.close()
-                result
+                // loadUser has a delay of 100ms. I'm cancelling it after 10.
+                // So it'll be cancelled before the user details have been loaded.
+                launch {
+                    delay(10)
+                    useCase.close()
+                }
+
+                useCase.loadAggregatedUserDetails()
             }
         }
 
+        assert(result.isFailure)
+        assert(result.exceptionOrNull() is kotlinx.coroutines.CancellationException)
         assertFalse(commentsCalled)
         assertFalse(friendsCalled)
     }
@@ -175,17 +183,17 @@ class TestCases {
 
     // Functions that return mocks
 
-    private suspend fun loadMockUser(delayTime: Long = 1): UserDetails {
+    private suspend fun loadMockUser(delayTime: Long = 100): UserDetails {
         delay(delayTime)
         return mockUser
     }
 
-    private suspend fun loadMockComments(userId: String, delayTime: Long = 1): List<Comment> {
+    private suspend fun loadMockComments(userId: String, delayTime: Long = 100): List<Comment> {
         delay(delayTime)
         return mockComments
     }
 
-    private suspend fun loadMockFriends(userId: String, delayTime: Long = 1): List<UserDetails> {
+    private suspend fun loadMockFriends(userId: String, delayTime: Long = 100): List<UserDetails> {
         delay(delayTime)
         return mockFriends
     }
