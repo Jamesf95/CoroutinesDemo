@@ -1,6 +1,7 @@
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Test
 import java.lang.Error
 
@@ -138,6 +139,37 @@ class TestCases {
         assertEquals(expected, actual)
     }
 
+
+    // Cancel
+
+    @Test
+    fun `Cancel stops the friend and comment functions being called`() {
+        var commentsCalled = false
+        var friendsCalled = false
+
+        val result = runBlocking {
+            runCatching {
+                val useCase = LoadAggregatedUserUseCase(
+                    loadUserDetails = { loadMockUser() },
+                    loadComments = {
+                        commentsCalled = true
+                        loadMockComments(it)
+                                   },
+                    loadFriends = {
+                        friendsCalled = true
+                        loadMockFriends(it, 3000)
+                    }
+                )
+
+                val result = useCase.loadAggregatedUserDetails()
+                useCase.close()
+                result
+            }
+        }
+
+        assertFalse(commentsCalled)
+        assertFalse(friendsCalled)
+    }
 
 
 
